@@ -19,7 +19,16 @@ class SecondViewController: UIViewController, ViewProtocol, ViewModelCast {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Log(self.viewModel?.params)
+        if self.viewModel!.params.count > 0 {
+            self.navigationItem.title = (self.viewModel?.params[0] as? String)
+        } else {
+            self.navigationItem.title = "normal"
+        }
+        // MARK: check method work as normal
+        Log(self.navigationController)
+        Log(NavigationControllerStack.currentNavigationViewController())
+        Log(NavigationControllerStack.currentViewController())
+        Log(self)
     }
     deinit {
         Log("dealloc")

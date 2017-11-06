@@ -10,7 +10,7 @@ import Foundation
 
 protocol ViewModelProtocol {
     var service: ViewModelService {get}
-    var params: [Any] {set get}
+    var params: [Any?] {set get}
     var storyBoard: StoryBoard {get}
     func push(_ animated: Bool)
     func pop(_ animated: Bool)

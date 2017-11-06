@@ -28,16 +28,21 @@ class FirstViewController: UIViewController, ViewProtocol, ViewModelCast {
         self.viewModel?
             .homeAction?
             .execute(())
-            .subscribe({ (event) in
-                _ = event.element?
-                    .map({ (storie) -> Void in
-                        Log(storie.title)
-                    })
-            }).disposed(by: self.rx.disposeBag)
-        
+            .bind(to: tableView.rx.items(cellIdentifier: "zhihu", cellType: ZhihuTableViewCell.self)) {
+                (row, element, cell) in
+                cell.model = element
+            }
+            .disposed(by: self.rx.disposeBag)
+        tableView.rx
+            .itemSelected
+            .asObservable()
+            .bind {[unowned self] (indexPath) in
+                SecondViewModel()
+                    .param((self.viewModel?.data![indexPath.row].title)!)
+                    .push()
+            }.disposed(by: self.rx.disposeBag)
+            
     }
-    
-    
     func installViewModel(_ viewModel: ViewModelProtocol) {
         self.viewModel = viewModel as? FirstViewModel
     }

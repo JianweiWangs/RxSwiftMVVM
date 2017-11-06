@@ -28,9 +28,6 @@ struct Service {
         _resetSubject = PublishSubject<(Any)>()
     }
     
-    
-    //TODO: Some Unpack Method
-    
 }
 
 extension Service: ViewModelService {

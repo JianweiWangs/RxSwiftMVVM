@@ -28,6 +28,9 @@ class NavigationControllerStack {
        _ = NavigationControllerStack.instance
     }
 }
+
+
+// MARK: - stack operate
 extension NavigationControllerStack {
     
     private func registerNavigationHooks() {
@@ -80,15 +83,29 @@ extension NavigationControllerStack {
         
     }
     
-    static func push(_ navigationController: UINavigationController) {
+    public static func push(_ navigationController: UINavigationController) {
         let stack = NavigationControllerStack.instance
         if stack.navigationStack.contains(navigationController) {
             return
         }
         stack.navigationStack.append(navigationController)
     }
-    @discardableResult static func pop() -> UINavigationController {
+    @discardableResult public static func pop() -> UINavigationController {
         let stack = NavigationControllerStack.instance
         return stack.navigationStack.removeLast()
+    }
+}
+
+// MARK: - some unpack method
+extension NavigationControllerStack {
+    static func currentViewController() -> UIViewController {
+        let stack = NavigationControllerStack.instance
+        assert(stack.navigationStack.count > 0, "there was not any viewcontroller")
+        return (stack.navigationStack.last?.viewControllers.last)!
+    }
+    static func currentNavigationViewController() -> UINavigationController {
+        let stack = NavigationControllerStack.instance
+        assert(stack.navigationStack.count > 0, "there was not any viewcontroller")
+        return stack.navigationStack.last!
     }
 }

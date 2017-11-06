@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -39,15 +39,15 @@
                                                         <constraint firstAttribute="height" constant="60" id="cge-9K-pLg"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAA-tL-pRW" userLabel="标题">
-                                                    <rect key="frame" x="12" y="12" width="34" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4567898765678909876567898767876787" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAA-tL-pRW" userLabel="标题">
+                                                    <rect key="frame" x="12" y="12" width="253.5" height="41"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="sBa-lY-3ov" secondAttribute="bottom" constant="12" id="3xl-W2-Zch"/>
+                                                <constraint firstAttribute="bottom" secondItem="sBa-lY-3ov" secondAttribute="bottom" priority="999" constant="12" id="3xl-W2-Zch"/>
                                                 <constraint firstItem="sBa-lY-3ov" firstAttribute="top" secondItem="JLE-Zt-4b4" secondAttribute="top" constant="12" id="Pei-HW-nQk"/>
                                                 <constraint firstItem="sBa-lY-3ov" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tAA-tL-pRW" secondAttribute="bottom" id="QvQ-WM-vmo"/>
                                                 <constraint firstItem="tAA-tL-pRW" firstAttribute="leading" secondItem="JLE-Zt-4b4" secondAttribute="leading" constant="12" id="dka-XE-gCP"/>
@@ -65,6 +65,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ybP-6y-WGC" firstAttribute="top" secondItem="scZ-Ug-VQ8" secondAttribute="bottom" id="8Gu-BN-IMe"/>
                             <constraint firstItem="eav-zf-Use" firstAttribute="top" secondItem="ybP-6y-WGC" secondAttribute="bottom" id="AKa-GU-mXJ"/>
@@ -91,7 +92,7 @@
                     <view key="view" contentMode="scaleToFill" id="22B-YH-rcy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.92303017600000004" green="1" blue="0.32268968920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qua-gS-BMi" userLabel="First Responder" sceneMemberID="firstResponder"/>

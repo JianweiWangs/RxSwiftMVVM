@@ -7,9 +7,13 @@
 //
 
 import Foundation
-
+import RxSwift
 class SecondViewModel: BaseViewModel {
+    
+    
     init() {
         super.init(StoryBoard("Main", "SecondViewController"))
+    }
+    override func initialize() {
     }
 }

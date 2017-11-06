@@ -12,9 +12,10 @@ class ZhihuTableViewCell: UITableViewCell {
     private var _model: Storie?
     var model: Storie? {
         set {
-            titleLabel.text = newValue?.title
-            contentImageView.kf.setImage(with: URL(string: (model?.images![0])!))
             self._model = newValue
+            titleLabel.text = self._model?.title
+            contentImageView.kf.setImage(with: URL(string: (self._model?.images![0])!))
+            
         }
         get {
             return self._model
