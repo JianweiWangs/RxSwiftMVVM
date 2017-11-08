@@ -25,7 +25,7 @@ class FirstViewModel: BaseViewModel {
                 .map{$0.stories ?? []}
                 .do(onNext: {
                     self.data = $0
-                }, onError: nil, onCompleted: nil, onSubscribe: nil, onSubscribed: nil, onDispose: nil)
+                })
         })
         
         

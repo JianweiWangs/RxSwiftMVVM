@@ -13,7 +13,7 @@ class BaseViewModel {
 
     let model: Model
     var params: [Any?] = []
-    let _storyBoard: StoryBoard
+    private let _storyBoard: StoryBoard
     private let _service: ViewModelService
 
     var storyBoard: StoryBoard {
