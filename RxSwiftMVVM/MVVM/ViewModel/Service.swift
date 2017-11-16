@@ -11,7 +11,7 @@ import RxSwift
 struct Service {
     
     static let instance = Service.init()
-    
+    let model: Model
     private let _pushSubject: PublishSubject<(Any)>
     private let _popSubject: PublishSubject<(Any)>
     private let _popRootSubject: PublishSubject<(Any)>
@@ -26,6 +26,7 @@ struct Service {
         _presentSubject = PublishSubject<(Any)>()
         _dismissSubject = PublishSubject<(Any)>()
         _resetSubject = PublishSubject<(Any)>()
+        model = Model()
     }
     
 }

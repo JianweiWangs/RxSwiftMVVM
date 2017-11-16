@@ -23,7 +23,7 @@ class BaseViewModel {
     init(_ storyBoard: StoryBoard) {
         _storyBoard = storyBoard
         _service = Service.instance
-        model = Model()
+        model = _service.model
         self.initialize()
     }
     

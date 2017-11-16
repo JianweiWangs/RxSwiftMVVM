@@ -10,16 +10,21 @@ import Foundation
 import RxSwift
 import RxDataSources
 import RxSwiftExt
+import RxCocoa
 import Action
+
 class FirstViewModel: BaseViewModel {
     
     var homeAction: Action<Void, [Storie]>?
     var rightAction: Action<Void, Void>?
     var data: [Storie]?
+    
     init() {
         super.init(StoryBoard("Main", "FirstViewController"))
     }
+    
     override func initialize() {
+        
         homeAction = Action<Void, [Storie]>.init(workFactory: {[unowned self] in
             self.model.request(API.Main, FirstModel.self)
                 .map{$0.stories ?? []}
@@ -27,7 +32,6 @@ class FirstViewModel: BaseViewModel {
                     self.data = $0
                 })
         })
-        
         
         rightAction = Action<Void, Void>.init(workFactory: {
             Observable<Void>.create({ (e) -> Disposable in

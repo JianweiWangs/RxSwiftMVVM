@@ -8,23 +8,25 @@
 
 import Foundation
 import HandyJSON
-class FirstModel: HandyJSON {
-    required init() {}
+struct FirstModel: HandyJSON {
+    init() {
+        
+    }
     var date: String?
     var stories: [Storie]?
     var top_stories: [Top]?
     
 }
-class Storie: HandyJSON {
-    required init() {}
+struct Storie: HandyJSON {
+    
     var ga_prefix: String?
-    var id: String?
+    var id: Int?
     var images: [String]?
     var title: String?
     var type: String?
 }
-class Top: HandyJSON {
-    required init() {}
+struct Top: HandyJSON {
+    
     var ga_prefix: String?
     var id: String?
     var image: String?

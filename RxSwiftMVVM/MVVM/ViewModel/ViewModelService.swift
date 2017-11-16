@@ -15,6 +15,7 @@ protocol ViewModelService {
     var presentSubject: PublishSubject<(Any)> {get}
     var dismissSubject: PublishSubject<(Any)> {get}
     var resetSubject: PublishSubject<(Any)> {get}
+    var model: Model {get}
     func pushViewModel(_ : ViewModelProtocol, _ : Bool)
     func popViewModel(_ : Bool)
     func popToRootViewModel(_ : Bool)

@@ -7,5 +7,13 @@
 //
 
 import Foundation
+import HandyJSON
+import Moya
+import RxSwift
+protocol ModelAbstract {
+    associatedtype JsonFormat: HandyJSON
+    associatedtype APIFormat: TargetType
+    func request(_ type: APIFormat, _ model: JsonFormat) -> Observable<JsonFormat>
+}
 
 

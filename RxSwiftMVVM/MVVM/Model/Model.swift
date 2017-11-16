@@ -10,9 +10,7 @@ import Foundation
 import Moya
 import HandyJSON
 import RxSwift
-import RxSwiftExt
-import NSObject_Rx
-class Model: NSObject {
+class Model {
     func request<H: HandyJSON, T: TargetType>(_ type: T, _ model: H.Type) -> Observable<H> {
         let mp = MoyaProvider<T>()
         let ob = mp

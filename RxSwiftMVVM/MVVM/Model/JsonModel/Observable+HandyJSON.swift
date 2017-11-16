@@ -15,7 +15,6 @@ import HandyJSON
 extension Observable {
     func map<T: HandyJSON>(_ type: T.Type) -> Observable<T> {
         return map { response in
-            
             guard let response = response as? Moya.Response else {
                 throw RxSwiftMoyaError.ResponseError
             }

@@ -41,6 +41,7 @@ class FirstViewController: UIViewController, ViewProtocol, ViewModelCast {
                     .param((self.viewModel?.data![indexPath.row].title)!)
                     .push()
             }.disposed(by: self.rx.disposeBag)
+
             
     }
     func installViewModel(_ viewModel: ViewModelProtocol) {
