@@ -23,7 +23,7 @@ struct StoryBoard {
     }
 }
 
-class Router {
+struct Router {
     private init() {}
     static let instance = Router.init()
     

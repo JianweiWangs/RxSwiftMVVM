@@ -9,7 +9,6 @@
 import Foundation
 import RxSwift
 struct Service {
-    
     static let instance = Service.init()
     let model: Model
     private let _pushSubject: PublishSubject<(Any)>
@@ -28,7 +27,6 @@ struct Service {
         _resetSubject = PublishSubject<(Any)>()
         model = Model()
     }
-    
 }
 
 extension Service: ViewModelService {

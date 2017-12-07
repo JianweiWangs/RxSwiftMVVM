@@ -13,7 +13,10 @@ class DataModel<T> : HandyJSON {
     var message: String?
     var data: T?
     func isSuccess() -> Bool {
-        return Int.init(code!)! == 0
+        guard let _code = code else {
+            return false
+        }
+        return Int.init(_code)! == 0
     }
     required init() {}
 }

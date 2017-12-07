@@ -25,14 +25,24 @@ class FirstViewController: UIViewController, ViewProtocol, ViewModelCast {
         rightBarItem.rx.action = self.viewModel?.rightAction
         self.navigationItem.rightBarButtonItem = rightBarItem
         
+        var leftBarItem = UIBarButtonItem(title: "刷新", style: .plain, target: nil, action: nil)
+        leftBarItem.rx.action = self.viewModel?.leftAction
+        self.navigationItem.leftBarButtonItem = leftBarItem
+        
         self.viewModel?
             .homeAction?
-            .execute(())
+            .executionObservables
+            .switchLatest()
             .bind(to: tableView.rx.items(cellIdentifier: "zhihu", cellType: ZhihuTableViewCell.self)) {
                 (row, element, cell) in
                 cell.model = element
             }
             .disposed(by: self.rx.disposeBag)
+        
+        self.viewModel?
+            .homeAction?
+            .execute(true)
+        
         tableView.rx
             .itemSelected
             .asObservable()

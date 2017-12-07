@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import RxSwift
-class NavigationControllerStack {
+final class NavigationControllerStack {
 
     static let instance = NavigationControllerStack.init()
     
